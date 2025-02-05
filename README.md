@@ -1,4 +1,5 @@
-## Design patterns
+## Markdown syntax guide
 
-1. creational patterns
-    1.1 - singleton
+* creational patterns
+    * singleton
+    * 
