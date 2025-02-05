@@ -2,4 +2,4 @@
 
 * creational patterns
     * singleton
-    * 
+    * factory method
