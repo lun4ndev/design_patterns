@@ -72,6 +72,13 @@ function init(director: Director, builder: ConcreteBuilder){
     builder.getProducts(3);
     director.buildProduct2();
     builder.getProducts(4);
+    builder.reset();
+    builder.getProducts(5);
+
+    builder.partB();
+    builder.partA();
+    builder.getProducts(6);
+
 }
 
 const builder = new ConcreteBuilder();
