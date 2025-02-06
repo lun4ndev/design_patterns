@@ -3,3 +3,5 @@
 * creational patterns
     * singleton
     * factory method
+    * abstract factory
+    * builder
