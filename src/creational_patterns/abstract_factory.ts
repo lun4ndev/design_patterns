@@ -49,3 +49,66 @@ function initFactory(factory: AbsctractFactory){
 }
 
 initFactory(new ConcreteFactory());
+
+
+
+//Пример №2
+
+enum TypeFigure {
+    square,
+    arc
+}
+
+interface AbstractFigure {
+    info(): void;
+}
+
+function AbstractFactory(type: TypeFigure){
+    return type === TypeFigure.square ? square : arc;
+}
+
+function square(size: number){
+    return new Square(size);
+}
+
+function arc(radius: number){
+    return new Arc(radius);
+}
+
+class Arc implements AbstractFigure {
+    private radius: number;
+
+    constructor(radius: number){
+        this.radius = radius;
+    }
+
+    info(){
+        console.log(`Arc: radius = ${this.radius}`)
+    }
+}
+
+class Square implements AbstractFigure {
+    private width: number;
+    private height: number;
+
+    constructor(size: number){
+        this.width = size;
+        this.height = size;
+    }
+
+    info(){
+        console.log(`Square: width = ${this.width}, height = ${this.height}, area: ${this.area()}`)
+    }
+
+    area(): number{
+        return this.width * this.height;
+    }
+}
+
+const createSquare = AbstractFactory(TypeFigure.square);
+const squareFigure = createSquare(45);
+squareFigure.info();
+
+const createArc = AbstractFactory(TypeFigure.arc);
+const squareArc= createArc(45);
+squareArc.info();
