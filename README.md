@@ -9,3 +9,4 @@
 
 * structural patterns
     * adapter
+    * decorator
