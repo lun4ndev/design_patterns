@@ -11,9 +11,20 @@ export function TestObject(){
     
     /*--------------------------------------------*/
     let result = 0;
+
+    //Быстрее
+    /*
     console.time('readObject');
     for(let i = 0; i <= count; i++){
         result += object[i];
+    }
+    console.timeEnd('readObject');
+    */
+
+    //Медленее
+    console.time('readObject');
+    for(let i of Object.values(object)){
+        result += i;
     }
     console.timeEnd('readObject');
     

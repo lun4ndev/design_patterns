@@ -10,9 +10,21 @@ export function TestMap(){
     
     /*--------------------------------------------*/
     let result = 0;
+
+    //Медленее
+    /*
     console.time('readMap');
     for(let i = 0; i <= count; i++){
         result += map.get(i);
+    }
+    console.timeEnd('readMap');
+    */
+
+    //Быстрее
+    
+    console.time('readMap');
+    for(let i of map.keys()){
+        result += i;
     }
     console.timeEnd('readMap');
     
