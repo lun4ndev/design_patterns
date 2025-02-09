@@ -24,7 +24,7 @@ export function TestObject(){
     //Медленее
     console.time('readObject');
     for(let i of Object.values(object)){
-        result += i;
+        result += Number(i);
     }
     console.timeEnd('readObject');
     

@@ -23,7 +23,7 @@ export function TestMap(){
     //Быстрее
     
     console.time('readMap');
-    for(let i of map.keys()){
+    for(let i of map.values()){
         result += i;
     }
     console.timeEnd('readMap');
